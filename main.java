@@ -1,20 +1,20 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const nomorWA = "6282312559796"; // Nomor aslimu
+document.querySelectorAll('.btn-pesan').forEach(button => {
+    button.addEventListener('click', function() {
+        const packageName = this.parentElement.querySelector('h3').innerText;
+        const waNumber = "6282312559796"; // Nomor Danish
+        const text = `Halo Danish, saya tertarik dengan paket *${packageName}* yang saya lihat di website. Bisa bantu jelaskan prosesnya?`;
+        const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+        
+        window.open(url, '_blank');
+    });
+});
 
-    const tombolPesan = document.querySelectorAll('.btn-pesan');
-    
-    tombolPesan.forEach(tombol => {
-        tombol.addEventListener('click', function() {
-            // Mengambil judul jasa dari elemen terdekat
-            const kartu = this.closest('.card');
-            const namaJasa = kartu.querySelector('h3').innerText;
-            
-            // Format pesan
-            const pesan = `Halo, saya mendapat info dari website Digital Service Bandung. Saya tertarik untuk konsultasi mengenai layanan *${namaJasa}*. Bagaimana prosedur selanjutnya?`;
-            
-            // Buka WhatsApp
-            const linkWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
-            window.open(linkWA, '_blank');
+// Efek Smooth Scroll untuk Navigasi
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
 });

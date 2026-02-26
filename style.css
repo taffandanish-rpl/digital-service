@@ -1,60 +1,70 @@
-/* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body { background-color: #f8f9fa; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #fdfdfd; color: #1a1a1a; line-height: 1.6; }
 
-/* Navigasi */
-nav { background: #002244; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-.logo { font-size: 1.4rem; font-weight: bold; }
-.logo span { color: #ffc107; }
-nav ul { display: flex; list-style: none; align-items: center; }
+nav { background: #001a33; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.logo span { color: #ffd700; }
+nav ul { list-style: none; display: flex; }
 nav ul li { margin-left: 20px; }
-nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-nav ul li a:hover { color: #ffc107; }
-.btn-wa { background: #25D366; padding: 8px 15px; border-radius: 5px; font-weight: bold; }
+nav ul li a { color: white; text-decoration: none; font-size: 0.9rem; }
+.btn-wa { background: #25d366; padding: 8px 15px; border-radius: 5px; font-weight: bold; }
 
-/* Hero Section */
-.hero { background: linear-gradient(rgba(0,34,68,0.85), rgba(0,34,68,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop'); 
-        background-size: cover; background-position: center; color: white; padding: 100px 5%; text-align: center; }
-.hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.hero p { font-size: 1.1rem; margin-bottom: 30px; color: #e0e0e0; }
-.btn-main { background: #ffc107; color: #002244; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(255,193,7,0.3); transition: 0.3s; }
-.btn-main:hover { background: #e0a800; transform: translateY(-2px); }
+.hero { height: 60vh; background: linear-gradient(rgba(0,26,51,0.8), rgba(0,26,51,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 5%; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.btn-main { background: #ffd700; color: #001a33; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; }
 
-/* Layanan Section */
-#layanan { padding: 60px 5%; text-align: center; }
-#layanan h2 { color: #002244; font-size: 2rem; margin-bottom: 5px; }
-.subtitle { color: #666; margin-bottom: 40px; }
+.kategori-section { padding: 80px 5%; text-align: center; }
+.grid-layanan { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
 
-/* Grid & Cards */
-.grid-layanan { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; text-align: left; }
-.card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #002244; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-.card h3 { color: #002244; margin-bottom: 10px; font-size: 1.2rem; }
-.card p { color: #555; font-size: 0.95rem; margin-bottom: 15px; flex-grow: 1; }
-.harga { font-weight: bold; color: #002244; font-size: 1.1rem; margin-bottom: 15px; display: block; }
-.btn-pesan { background: #f0f0f0; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold; color: #333; transition: 0.3s; width: 100%; }
-.btn-pesan:hover { background: #e0e0e0; }
+.card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; transition: 0.4s; position: relative; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.harga { display: block; font-size: 1.5rem; font-weight: bold; margin: 15px 0; color: #001a33; }
+.btn-pesan { width: 100%; padding: 10px; border: none; background: #f0f0f0; border-radius: 5px; cursor: pointer; font-weight: bold; }
 
-/* SPESIAL PAKET VIP (EXCALIBUR) */
-.highlight-vip { border: 3px solid #ffc107; background: #fffcf0; transform: scale(1.03); box-shadow: 0 10px 25px rgba(255, 193, 7, 0.2); position: relative; z-index: 10; }
-.highlight-vip:hover { transform: scale(1.05); }
-.highlight-vip h3 { color: #b38600; font-size: 1.4rem; }
-.ribbon { position: absolute; top: -15px; right: 20px; background: #ffc107; color: #002244; padding: 5px 15px; font-size: 0.8rem; font-weight: bold; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-.vip-btn { background: #ffc107; color: #002244; border: none; }
-.vip-btn:hover { background: #e0a800; }
+/* PAKET VIP GLOW EFFECT */
+.highlight-vip { border: 2px solid #ffd700; background: #fffef0; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
+.ribbon { position: absolute; top: 10px; right: -10px; background: #ffd700; color: #001a33; padding: 5px 15px; font-size: 0.7rem; font-weight: bold; border-radius: 3px; }
+.vip-btn { background: #ffd700; color: #001a33; }
 
-/* Footer */
-footer { background: #001122; color: #ccc; text-align: center; padding: 40px 5% 20px; margin-top: 50px; }
-footer h3 { color: white; margin-bottom: 10px; }
-.social-links { margin: 15px 0; font-weight: bold; color: #ffc107; }
-.melancholy-quote { font-style: italic; font-size: 0.85rem; color: #777; margin-top: 20px; border-top: 1px solid #333; padding-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.bg-dark { background: #001a33; color: white; }
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+.trust-item h4 { color: #ffd700; margin-bottom: 10px; }
 
-/* Responsif HP */
-@media (max-width: 768px) {
-    nav { flex-direction: column; }
-    nav ul { margin-top: 15px; }
-    nav ul li { margin: 0 10px; }
-    .hero h1 { font-size: 2rem; }
-    .highlight-vip { transform: scale(1); border-width: 2px; }
-    .highlight-vip:hover { transform: translateY(-5px); }
+footer { padding: 40px; background: #000b1a; color: #777; text-align: center; font-size: 0.8rem; }
+.quote { font-style: italic; margin-top: 15px; color: #555; }
+
+@media (max-width: 600px) {
+    .trust-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8rem; }
+}
+
+/* GAYA BARU UNTUK SEKSI SERTIFIKAT */
+.card-dark {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-align: left;
+    transition: 0.3s;
+}
+.card-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffd700;
+}
+.icon-badge {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.cert-id {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #ffd700;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+}
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
