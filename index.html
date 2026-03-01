@@ -3,120 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Service Bandung | Danish Taffan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Danish Digital Services | Certified Cloud & Web Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A58CA;
+            --secondary: #25D366;
+            --dark: #121212;
+            --light: #FFFFFF;
+            --gray: #F4F7FA;
+            --gold: #FFD700;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--gray); color: var(--dark); line-height: 1.6; }
+
+        /* Modern Header */
+        header { 
+            background: linear-gradient(135deg, #001F54 0%, #0A58CA 100%); 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .badge-komdigi { 
+            background: var(--gold); 
+            color: #000; 
+            padding: 8px 20px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.8rem; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+            margin-bottom: 20px; 
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .hero-desc { font-size: 1rem; opacity: 0.9; max-width: 500px; margin: 0 auto; font-weight: 400; }
+
+        .container { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 1.8rem; color: var(--primary); }
+        .section-title p { color: #666; font-size: 0.9rem; }
+
+        /* Pricing Grid */
+        .service-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        @media (min-width: 768px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .card { 
+            background: white; 
+            border-radius: 24px; 
+            padding: 30px; 
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03); 
+            border: 1px solid #EEE;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        /* Highlight Paket Sultan */
+        .card.featured { border: 2px solid var(--gold); background: #FFFDF0; }
+        .card.featured::before { 
+            content: 'MOST EXCLUSIVE'; 
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: black; padding: 4px 15px; font-size: 0.7rem; font-weight: 800; border-radius: 10px;
+        }
+
+        .card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--dark); }
+        .price-tag { color: #28A745; font-weight: 800; font-size: 1.5rem; margin-bottom: 5px; display: block; }
+        .maintenance { font-size: 0.75rem; color: #888; margin-bottom: 20px; display: block; }
+        
+        .features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+        .features li { font-size: 0.85rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: #444; }
+        .features li::before { content: '✓'; color: var(--secondary); font-weight: 900; }
+
+        /* Buttons */
+        .btn-order { 
+            background: var(--dark); 
+            color: white; 
+            text-decoration: none; 
+            text-align: center; 
+            padding: 15px; 
+            border-radius: 16px; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            transition: 0.3s;
+        }
+        .btn-order.whatsapp { background: var(--secondary); }
+        .btn-order:hover { filter: brightness(1.1); }
+
+        /* Trusted Section */
+        .trusted-badge {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+            border: 1px solid #DDD;
+        }
+        .trusted-text h4 { font-size: 0.9rem; margin-bottom: 2px; }
+        .trusted-text p { font-size: 0.75rem; color: #777; }
+
+        footer { text-align: center; padding: 60px 20px; font-size: 0.85rem; color: #999; }
+        .floating-contact { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: var(--secondary); color: white; 
+            width: 60px; height: 60px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); 
+            text-decoration: none; font-size: 1.5rem; z-index: 1000;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <nav>
-            <div class="logo">DigitalService<span>Bandung</span></div>
-            <ul>
-                <li><a href="#harian">Jasa</a></li>
-                <li><a href="#portfolio">Portofolio</a></li>
-                <li><a href="https://wa.me/6282312559796" class="btn-wa">Chat Danish</a></li>
-            </ul>
-        </nav>
+        <div class="badge-komdigi">🛡️ Certified Cloud Expert - Komdigi 2026</div>
+        <h1>Danish Digital Services</h1>
+        <p class="hero-desc">Transformasi Digital UMKM Bandung bersama Tenaga Ahli RPL SMK Al-Falah yang Tersertifikasi Nasional.</p>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Solusi Digital dari Dago untuk Bandung</h1>
-            <p>Optimasi HP, Keamanan Akun, hingga Website Bisnis VIP. <br> 
-               Dikerjakan dengan integritas standar <strong>KOMDIGI 2026</strong>.</p>
-            <a href="#website" class="btn-main">Mulai Transformasi Digital</a>
-        </div>
-    </section>
-
-    <section id="layanan" class="kategori-section">
-        <h2>🛠️ 8 Solusi Digital Profesional</h2>
-        <div class="grid-layanan">
-            <div class="card">
-                <h3>🚀 HP Anti-Lemot</h3>
-                <span class="harga">Rp 15.000</span>
-                <p>Optimasi RAM & pembersihan sistem agar bisnis lancar.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>📱 Asisten Otomatis</h3>
-                <span class="harga">Rp 20.000</span>
-                <p>Setting WA Business, jam buka, & katalog otomatis.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>🛡️ Pawang Anti-Tipu</h3>
-                <span class="harga">Rp 25.000</span>
-                <p>Audit keamanan akun & proteksi data dari hacker.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>☁️ Memori Lega (Cloud)</h3>
-                <span class="harga">Rp 35.000</span>
-                <p>Migrasi data aman ke Cloud (Standar KOMDIGI).</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>📣 Iklan Viral</h3>
-                <span class="harga">Rp 45.000</span>
-                <p>Iklan Medsos tertarget untuk jangkauan luas.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>📍 Maps Booster</h3>
-                <span class="harga">Konsultasi</span>
-                <p>Optimasi lokasi agar bisnis muncul teratas di Maps.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card">
-                <h3>📄 Basic Landing Page</h3>
-                <span class="harga">Rp 399k</span>
-                <p>Satu halaman web kartu nama digital profesional.</p>
-                <button class="btn-pesan">Pesan</button>
-            </div>
-            <div class="card highlight-vip">
-                <div class="ribbon">UNGGULAN</div>
-                <h3>💎 Digital Growth VIP</h3>
-                <span class="harga">Rp 599.000</span>
-                <p>Website Bisnis Full + Keamanan SSL + Katalog Produk + SEO.</p>
-                <button class="btn-pesan vip-btn">Ambil Paket VIP</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="kredibilitas" class="kategori-section bg-dark">
-        <h2>🎖️ Sertifikasi Resmi KOMDIGI 2026</h2>
-        <p class="subtitle" style="color: #ccc;">Menjamin pengerjaan dengan standar logika dan teknologi terbaru.</p>
+    <div class="container">
         
-        <div class="trust-grid">
-            <div class="trust-item card-dark">
-                <div class="icon-badge">🧠</div>
-                <h4>Computational Thinking</h4>
-                <p>Sertifikat Pelatihan Logika Berpikir Komputasional untuk pemecahan masalah yang efisien dan terstruktur.</p>
-                <span class="cert-id">No: 22910204850-11070</span>
+        <div class="section-title">
+            <h2>Pilih Paket Solusi Anda</h2>
+            <p>Setiap proyek dikerjakan dengan standar Cloud Computing terbaru.</p>
+        </div>
+        
+        <div class="service-grid">
+            
+            <div class="card featured">
+                <h3>👑 Paket Custom Pro (Sultan)</h3>
+                <span class="price-tag">Rp 1.499.000</span>
+                <span class="maintenance">+ Maintenance Rp 100rb/bln</span>
+                <ul class="features">
+                    <li>Desain 100% Eksklusif (Bukan Template)</li>
+                    <li>Domain .com / .id Gratis (1 Tahun)</li>
+                    <li>Katalog Produk Tanpa Batas</li>
+                    <li>Prioritas Maintenance 24 Jam</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-order whatsapp" onclick="orderWA('Paket Sultan', 1499000)">Ambil Paket Sultan</a>
             </div>
-    
-            <div class="trust-item card-dark">
-                <div class="icon-badge">☁️</div>
-                <h4>Cloud Computing Specialist</h4>
-                <p>Ahli dalam konsep dasar & layanan Cloud untuk menjamin data bisnis Anda aman di server awan.</p>
-                <span class="cert-id">No: 2299864850-15217</span>
+
+            <div class="card">
+                <h3>📈 Paket Bisnis: Digital Growth</h3>
+                <span class="price-tag">Rp 599.000</span>
+                <span class="maintenance">+ Maintenance Rp 50.000rb/bln</span>
+                <ul class="features">
+                    <li>Website Multi-Halaman Profesional</li>
+                    <li>Google Maps & SEO Booster</li>
+                    <li>Katalog Digital (Max 15 Item)</li>
+                    <li>Integrasi Tombol WhatsApp</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-order whatsapp" onclick="orderWA('Digital Growth', 599000)">Pesan Paket Bisnis</a>
+            </div>
+
+            <div class="card">
+                <h3>🌐 Paket Basic: Landing Page</h3>
+                <span class="price-tag">Rp 399.000</span>
+                <span class="maintenance">+ Maintenance Rp 25.000rb/bln</span>
+                <ul class="features">
+                    <li>Satu Halaman Web Responsif</li>
+                    <li>Profil Usaha & Kontak Lengkap</li>
+                    <li>Hosting Aman & Cepat</li>
+                    <li>Selesai dalam 1-2 Hari</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-order whatsapp" onclick="orderWA('Basic Landing Page', 399000)">Pilih Paket Basic</a>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Iklan Viral (Multi-Platform)</h3>
+                <span class="price-tag">Rp 45.000</span>
+                <span class="maintenance">Per Campaign</span>
+                <ul class="features">
+                    <li>Targeting Area Spesifik (Bandung/Cisitu)</li>
+                    <li>Optimasi Algoritma TikTok & IG</li>
+                    <li>Laporan Jangkauan Pemirsa</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-order" onclick="orderWA('Iklan Viral', 45000)">Mulai Iklan</a>
+            </div>
+
+        </div>
+
+        <div class="trusted-badge">
+            <div style="font-size: 2rem;">🎓</div>
+            <div class="trusted-text">
+                <h4>Kredibilitas Terjamin</h4>
+                <p>Danish Taffan Ibrahim - Lulusan Pelatihan <b>Introduction to Cloud Computing</b> (Digital Talent Scholarship 2026, KOMDIGI). <a href="sertifikat-komdigi-danish.pdf" target="_blank" style="color:var(--primary); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--primary);">Lihat Sertifikat Resmi &rarr;</a></p>
             </div>
         </div>
-    </section>
-    
-    <div class="card">
-        <h3>☁️ Paket Memori Lega (Cloud Expert)</h3>
-        <span class="harga">Rp 35.000</span>
-        <p>Penerapan teknologi Cloud Computing untuk pemindahan data yang aman & terenkripsi.</p>
-        <button class="btn-pesan">Pesan Sekarang</button>
+
     </div>
-    </section>
 
     <footer>
-        <p><strong>Digital Service Bandung</strong> | Danish Taffan Ibrahim</p>
-        <p>Jl. Sakuriang Dalam No. 86, Dago, Bandung</p>
-        <p class="quote">"Harapan tidak akan layu selama ia memiliki akar digital yang kuat."</p>
+        <p><b>Danish Digital Services</b> - Kebanggaan Siswa RPL SMK Al-Falah Bandung</p>
+        <p>Integritas • Profesionalisme • Inovasi</p>
     </footer>
 
-    <script src="script.js"></script>
+    <a href="https://wa.me/6282312559796?text=Halo%20Mas%20Danish,%20saya%20ingin%20konsultasi%20layanan%20digital." class="floating-contact">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        function orderWA(paket, harga) {
+            // Ganti nomor di bawah dengan nomor WhatsApp aslimu
+            const noWA = "6282312559796"; 
+            const formattedHarga = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(harga);
+            const teks = Halo Mas Danish, saya tertarik dengan *${paket}* seharga *${formattedHarga}*. Bisa bantu jelaskan proses selanjutnya?;
+            const link = https://wa.me/${noWA}?text=${encodeURIComponent(teks)};
+            window.open(link, '_blank');
+        }
+    </script>
 </body>
 </html>
